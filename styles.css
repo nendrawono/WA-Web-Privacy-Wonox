@@ -1,0 +1,148 @@
+/* =========================================================
+   EFEK PRIVASI / BLUR (HOVER TO REVEAL)
+   ========================================================= */
+
+/* Efek Blur default hanya aktif jika 'wa-blur-disabled' TIDAK ada pada body */
+body:not(.wa-blur-disabled) #pane-side [role="gridcell"],
+body:not(.wa-blur-disabled) .message-in, 
+body:not(.wa-blur-disabled) .message-out,
+body:not(.wa-blur-disabled) div[data-tab="8"] img,
+body:not(.wa-blur-disabled) div[aria-label*="Photo"],
+body:not(.wa-blur-disabled) div[aria-label*="Foto"] {
+  filter: blur(8px);
+  transition: filter 0.2s ease-in-out;
+}
+
+/* Saat di-hover, teks kembali jelas */
+body:not(.wa-blur-disabled) #pane-side [role="gridcell"]:hover,
+body:not(.wa-blur-disabled) .message-in:hover, 
+body:not(.wa-blur-disabled) .message-out:hover,
+body:not(.wa-blur-disabled) div[data-tab="8"] img:hover,
+body:not(.wa-blur-disabled) div[aria-label*="Photo"]:hover,
+body:not(.wa-blur-disabled) div[aria-label*="Foto"]:hover {
+  filter: blur(0);
+}
+
+
+/* =========================================================
+   STYLING FORM KIRIM PESAN & INDIKATOR STATUS
+   ========================================================= */
+
+#wa-quick-chat-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e9edef;
+  z-index: 999;
+  
+  /* Theme Light Default */
+  background-color: #f0f2f5;
+  color: #111b21;
+}
+
+#wa-quick-chat-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #111b21;
+}
+
+#wa-quick-chat-input:focus {
+  border-color: #00a884;
+}
+
+#wa-quick-chat-btn {
+  background-color: #00a884;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+#wa-quick-chat-btn:hover {
+  background-color: #06cf9c;
+}
+
+/* Tombol Indicator Status Blur (ON/OFF) */
+#wa-blur-toggle-btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+}
+
+
+/* =========================================================
+   SUPPORT DARK MODE (Sesuai Pengaturan Laptop/OS)
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+  #wa-quick-chat-container {
+    background-color: #111b21;
+    border-bottom: 1px solid #222e35;
+    color: #e9edef;
+  }
+
+  #wa-quick-chat-input {
+    background-color: #202c33;
+    border-color: #2a3942;
+    color: #d1d7db;
+  }
+
+  #wa-quick-chat-input::placeholder {
+    color: #8696a0;
+  }
+
+  #wa-blur-toggle-btn {
+    border-color: #2a3942;
+    background-color: #202c33;
+  }
+}
+
+/* =========================================================
+   STYLING WATERMARK / BRANDING FOOTER
+   ========================================================= */
+
+.wa-credits {
+  font-size: 11px;
+  color: #667781;
+  margin-top: 4px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.wa-credits a {
+  color: #00a884;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.2s ease;
+}
+
+.wa-credits a:hover {
+  text-decoration: underline;
+}
+
+/* Penyesuaian Warna Teks untuk Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .wa-credits {
+    color: #8696a0;
+  }
+  .wa-credits a {
+    color: #00a884;
+  }
+}

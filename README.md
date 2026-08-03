@@ -80,7 +80,7 @@ Dukungan Anda sangat berarti untuk biaya kopi, pengembangan fitur baru, dan pera
   </a>
 </p>
 
-> 💡 *Catatan: Ganti tautan Saweria / Trakteer / BuyMeACoffee di atas dengan link profil donasi Anda.*
+
 
 ---
 
